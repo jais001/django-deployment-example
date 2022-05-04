@@ -1,0 +1,9 @@
+{% extends "AppTwo/base.html" %}
+{% load static %}
+{% block content %}
+  <h1>WELCOME!!</h1>
+  <h2>{{ insert_me|upper }}</h2>
+  {{ number|add:"50" }}
+  <h2>SIGN UP HERE.....</h2>
+  <img src="{% static 'images/test.jpg' %}" alt="Oops...Sorry!!">
+{% endblock %}

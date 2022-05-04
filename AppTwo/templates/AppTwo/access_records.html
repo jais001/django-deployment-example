@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Records</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <h2>Access Records:</h2>
+    <div>
+        {% if access_records %}
+        <table border="2">
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+            {% for acc in access_records %}
+            <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No records found</p>
+        {% endif %}
+    </div>
+    <h2>Go to Help</h2>
+    <a href="{% url 'help-index' %}">Help Page</a>
+</body>
+</html>
